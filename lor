@@ -1,0 +1,62 @@
+
+CategoriesController /index
+  normally
+[32m    should be success[0m
+[32m    should render template matcher "articles/groupings"[0m
+[32m    should not be empty[0m
+    when rendered
+[32m      should When you call a matcher in an example without a String, like this:
+
+specify { object.should matcher }
+
+or this:
+
+it { should matcher }
+
+RSpec expects the matcher to have a #description method. You should either
+add a String to the example this matcher is being used in, or give it a
+description method. Then you won't have to suffer this lengthy warning again.[0m
+  if :index template exists
+[33m    should render :index (PENDING: Stubbing #template_exists is not enough to fool Rails)[0m
+
+CategoriesController#show
+[32m  should be successful[0m
+[33m  should render :show by default (PENDING: Stubbing #template_exists is not enough to fool Rails)[0m
+[32m  should fall back to rendering articles/index[0m
+[33m  should render personal when template exists (PENDING: Stubbing #template_exists is not enough to fool Rails)[0m
+[32m  should show only published articles[0m
+[32m  should set the page title to "Category Personal"[0m
+[32m  should render the atom feed for /articles/category/personal.atom[0m
+[32m  should render the rss feed for /articles/category/personal.rss[0m
+  when rendered
+[32m    should have a canonical URL[0m
+
+CategoriesController#show with a non-existent category
+[32m  should raise ActiveRecord::RecordNotFound[0m
+
+CategoriesController empty category life-on-mars
+[32m  should redirect to home when the category is empty[0m
+
+CategoriesController password protected article
+[32m  should be password protected when shown in category[0m
+
+CategoriesController SEO Options
+[32m  category without meta keywords and activated options (use_meta_keyword ON) should not have meta keywords[0m
+[32m  category with keywords and activated option (use_meta_keyword ON) should have meta keywords[0m
+[32m  category with meta keywords and deactivated options (use_meta_keyword off) should not have meta keywords[0m
+[32m  with unindex_categories (set ON), should have rel nofollow[0m
+[32m  without unindex_categories (set OFF), should not have rel nofollow[0m
+
+Pending:
+[33m  CategoriesController /index if :index template exists should render :index[0m
+[36m    # Stubbing #template_exists is not enough to fool Rails[0m
+[36m    # ./spec/controllers/categories_controller_spec.rb:30[0m
+[33m  CategoriesController#show should render :show by default[0m
+[36m    # Stubbing #template_exists is not enough to fool Rails[0m
+[36m    # ./spec/controllers/categories_controller_spec.rb:62[0m
+[33m  CategoriesController#show should render personal when template exists[0m
+[36m    # Stubbing #template_exists is not enough to fool Rails[0m
+[36m    # ./spec/controllers/categories_controller_spec.rb:77[0m
+
+Finished in 17.63 seconds
+[33m22 examples, 0 failures, 3 pending[0m

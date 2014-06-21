@@ -10,7 +10,6 @@ describe Admin::CategoriesController do
     henri = Factory(:user, :login => 'henri', :profile => Factory(:profile_admin, :label => Profile::ADMIN))
     request.session = { :user => henri.id }
   end
-
   it "test_index" do
     get :index
     assert_response :redirect, :action => 'index'
@@ -62,5 +61,4 @@ describe Admin::CategoriesController do
 
     assert_raise(ActiveRecord::RecordNotFound) { Category.find(test_id) }
   end
-  
 end
